@@ -1,0 +1,35 @@
+[project]
+name = "local-coding-assistant"
+version = "0.1.0"
+description = "Local Vector + Graph Hybrid RAG coding assistant"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "faiss-cpu>=1.14.2",
+    "kuzu>=0.11.3",
+    "numpy>=2.4.6",
+    "streamlit>=1.58.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "ruff>=0.14.0",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+extend-exclude = [".agent", ".rag_data", "dist"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B", "SIM", "RUF", "TRY", "PYI"]
+ignore = ["TRY003"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/e2e_smoke.py" = ["E402"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+pythonpath = ["."]
+testpaths = ["tests"]

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+*.key
+
+# Generated RAG stores
+.rag_data/
+.hybrid_rag/
+
+# Streamlit / caches
+.streamlit/secrets.toml
+.cache/
+.ruff_cache/
+
+# Local planning / submission packages
+.agent/
+AGENTS.md
+dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
